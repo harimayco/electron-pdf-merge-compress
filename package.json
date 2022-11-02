@@ -54,7 +54,7 @@
   "author": "Rendy Harimayco <rendyharimayco@gmail.com>",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^21.2.1",
+    "electron": "^11.5.0",
     "electron-builder": "^23.6.0",
     "electron-reloader": "^1.2.0"
   },
