@@ -8,7 +8,7 @@ Any suggestions or feature addition is highly appreciated.
 ### Modified From
 https://github.com/niksingh710/PdfMerger Thanks to [@niksingh710](https://github.com/niksingh710)
 
-### Added Compress efature using Ghostscript WASM
+### Added Compress feature using Ghostscript WASM
 [@jspawn/ghostscript-wasm](https://www.npmjs.com/package/@jspawn/ghostscript-wasm) Thanks to [@jsscheller](https://github.com/jsscheller)
 
 ## Build
