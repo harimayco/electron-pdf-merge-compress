@@ -1,6 +1,6 @@
 {
-  "name": "pdfmerger",
-  "productName": "Pdf Merger",
+  "name": "pdf-merge-compress",
+  "productName": "Pdf Merge & Compress",
   "version": "1.0.0",
   "description": "Simple pdf merge app for desktop created using electron by Nikhil Singh <https://t.me/niksingh710> modified by Rendy harimayco",
   "main": "main.js",
