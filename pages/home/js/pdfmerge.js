@@ -26,7 +26,6 @@ const showNotif = (body, path) => {
     icon: 'success',
     html:body,
     showCloseButton: true,
-    showCancelButton: true,
     focusConfirm: true,
     confirmButtonText:
       'Open File',
