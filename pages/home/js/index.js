@@ -1,9 +1,12 @@
 const { ipcRenderer } = require("electron");
 const { em, getData, setData } = require("./data");
-const { submit } = require("./pdfmerge");
+const { submit,compress } = require("./pdfmerge");
+let loading = require('@aligilan/loading');
+let normal_loading = new loading();
 
 const ul = document.getElementById("list-container");
 const submitBtn = document.getElementById("submit");
+const compressBtn = document.getElementById("compress");
 const clearBtn = document.getElementById("clear");
 
 em.on("update", ({ name, id, size }) => {
@@ -46,6 +49,10 @@ setInterval(() => {
     submitBtn.style.backgroundColor = "#aaa";
     submitBtn.style.color = "#eee";
 
+    compressBtn.disabled = true;
+    compressBtn.style.backgroundColor = "#aaa";
+    compressBtn.style.color = "#eee";
+
     clearBtn.disabled = true;
     clearBtn.style.backgroundColor = "#aaa";
     clearBtn.style.color = "#eee";
@@ -54,6 +61,10 @@ setInterval(() => {
     submitBtn.disabled = false;
     submitBtn.style.backgroundColor = "";
     submitBtn.style.color = "";
+    
+    compressBtn.disabled = false;
+    compressBtn.style.backgroundColor = "";
+    compressBtn.style.color = "";
 
     clearBtn.disabled = false;
     clearBtn.style.backgroundColor = "";
@@ -82,8 +93,17 @@ setInterval(() => {
   });
 }, 100);
 submitBtn.addEventListener("click", async () => {
+  normal_loading.show('body');
   updateData();
   await submit(getData());
+  normal_loading.hide('body');
+});
+
+compressBtn.addEventListener("click", async () => {
+  normal_loading.show('body');
+  updateData();
+  await compress(getData());
+  normal_loading.hide('body');
 });
 
 clearBtn.addEventListener("click", () => {

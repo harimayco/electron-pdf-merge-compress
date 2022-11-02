@@ -1,6 +1,6 @@
 require("dotenv").config();
 
-const { app, createWindow, ipcMain, dialog } = require("./screens/mainScreen");
+const { app, createWindow, ipcMain, BrowserWindow } = require("./screens/mainScreen");
 
 app.on("ready", () => {
   createWindow();

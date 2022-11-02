@@ -1,3 +1,4 @@
+@import "~@aligilan/loading/style.css";
 @import "misc";
 * {
   box-sizing: border-box;
@@ -21,7 +22,8 @@ html {
   left: 50%;
   transform: translate(-50%, 0%);
   border-radius: 2rem;
-  box-shadow: 0 0 4rem rgba(#000, 0.6);
+  // box-shadow: 0 0 4rem rgba(#000, 0.6);
+  border:  1px dotted #000;
   @include flex-center;
   font-size: 4rem;
   color: #aaa;

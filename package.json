@@ -2,17 +2,16 @@
   "name": "pdfmerger",
   "productName": "Pdf Merger",
   "version": "1.0.0",
-  "description": "Simple pdf merge app for desktop created using electron by Nikhil Singh <https://t.me/niksingh710>",
+  "description": "Simple pdf merge app for desktop created using electron by Nikhil Singh <https://t.me/niksingh710> modified by Rendy harimayco",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
     "build:linux": "electron-builder -l",
-    "build:win": "electron-builder -w",
-    "build:lw": "electron-builder -lw",
+    "build:mw": "electron-builder -mw",
     "publish:lw": "electron-builder -lw -p 'onTagOrDraft'"
   },
   "build": {
-    "appId": "com.niksingh710.test",
+    "appId": "com.harimayco.rendy",
     "linux": {
       "target": [
         "AppImage",
@@ -34,32 +33,39 @@
     },
     "win": {
       "target": [
-        "nsis"
+        "portable"
       ],
-      "icon": "./build/icon/icon.ico",
+      "icon": "./build/icon/icon.png",
       "publish": [
         "github"
       ]
+    },
+    "mac": {
+      "target": "dmg",
+      "icon": "./build/icon/icon.png"
     },
     "nsis": {
       "oneClick": false,
       "allowToChangeInstallationDirectory": true
     }
   },
-  "repository": "https://github.com/niksingh710/PdfMerger.git",
-  "homepage": "https://github.com/niksingh710",
-  "author": "Nikhil Singh <nik.singh710@gmail.com>",
+  "repository": "https://github.com/harimayco/electron-pdf-merge-compress.git",
+  "homepage": "https://github.com/harimayco",
+  "author": "Rendy Harimayco <rendyharimayco@gmail.com>",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^11.2.2",
-    "electron-builder": "^22.9.1",
+    "electron": "^21.2.1",
+    "electron-builder": "^23.6.0",
     "electron-reloader": "^1.2.0"
   },
   "dependencies": {
+    "@aligilan/loading": "^1.0.9",
+    "@jspawn/ghostscript-wasm": "^0.0.2",
     "dotenv": "^8.2.0",
     "electron-log": "^4.3.1",
     "electron-updater": "^4.3.5",
     "electron-window-state": "^5.0.3",
-    "pdf-merger-js": "^3.0.5"
+    "pdf-merger-js": "^3.0.5",
+    "sweetalert2": "^11.6.5"
   }
 }
